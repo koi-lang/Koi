@@ -1,0 +1,6 @@
+[submodule "koi-grammar"]
+	path = koi-grammar
+	url = https://github.com/koi-lang/koi-grammar
+[submodule "examples"]
+	path = examples
+	url = https://github.com/koi-lang/examples
