@@ -50,3 +50,30 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Antlr4 files
+src/main/cpp/Koi.tokens
+src/main/cpp/KoiBaseListener.cpp
+src/main/cpp/KoiBaseListener.h
+src/main/cpp/KoiLexer.cpp
+src/main/cpp/KoiLexer.h
+src/main/cpp/KoiLexer.tokens
+src/main/cpp/KoiListener.cpp
+src/main/cpp/KoiListener.h
+src/main/cpp/KoiParser.cpp
+src/main/cpp/KoiParser.h
+
+# Gradle files
+.gradle/
+
+# Other files
+build
+cmake-build-debug
+libs/
+generated/
