@@ -1,0 +1,43 @@
+apply plugin: "cpp"
+
+model {
+    components {
+        libs(NativeLibrarySpec) {
+            sources {
+                cpp {
+                    exportedHeaders {
+                        srcDirs = ["libs/antlr4-runtime",
+                        "libs/antlr4-runtime/atn",
+                        "libs/antlr4-runtime/dfa",
+                        "libs/antlr4-runtime/misc",
+                        "libs/antlr4-runtime/support",
+                        "libs/antlr4-runtime/tree"]
+                    }
+                }
+            }
+        }
+
+        main(NativeExecutableSpec) {
+            sources {
+                cpp {
+                    lib library: "libs", linkage: "static"
+
+                    source {
+                        srcDirs "src/main/cpp", "generated/koi-generated"
+                        include "**.cpp"
+                        exclude "**.tokens"
+                    }
+
+                    exportedHeaders {
+                        srcDirs += "libs/koi-generated"
+                    }
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        debug
+        release
+    }
+}
