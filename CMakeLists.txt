@@ -18,5 +18,7 @@ include_directories(
         libs/antlr4-runtime/tree
         libs/antlr4-runtime/support
 
-        generated/koi-generated
-)
+        generated/koi-generated)
+
+find_library(ANTLR antlr4-runtime.lib libs)
+target_link_libraries(Koi ${ANTLR})

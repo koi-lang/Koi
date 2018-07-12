@@ -29,7 +29,7 @@ model {
                     }
 
                     exportedHeaders {
-                        srcDirs += "libs/koi-generated"
+                        srcDirs += "generated/koi-generated"
                     }
                 }
             }
