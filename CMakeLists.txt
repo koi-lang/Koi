@@ -4,21 +4,22 @@ project(Koi)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Koi
-        src/main/cpp/main.cpp
-        src/main/cpp/KoiVisitor.cpp src/main/cpp/KoiVisitor.hpp)
+        ${Koi_SOURCE_DIR}/src/main/cpp/main.cpp
+        ${Koi_SOURCE_DIR}/src/main/cpp/KoiVisitor.cpp
+        ${Koi_SOURCE_DIR}/src/main/cpp/KoiVisitor.hpp)
 
 include_directories(
-        src/main/c/
-        src/main/cpp/
+        ${Koi_SOURCE_DIR}/src/main/c/
+        ${Koi_SOURCE_DIR}/src/main/cpp/
 
-        libs/antlr4-runtime
-        libs/antlr4-runtime/misc
-        libs/antlr4-runtime/atn
-        libs/antlr4-runtime/dfa
-        libs/antlr4-runtime/tree
-        libs/antlr4-runtime/support
+        ${Koi_SOURCE_DIR}/libs/antlr4-runtime
+        ${Koi_SOURCE_DIR}/libs/antlr4-runtime/misc
+        ${Koi_SOURCE_DIR}/libs/antlr4-runtime/atn
+        ${Koi_SOURCE_DIR}/libs/antlr4-runtime/dfa
+        ${Koi_SOURCE_DIR}/libs/antlr4-runtime/tree
+        ${Koi_SOURCE_DIR}/libs/antlr4-runtime/support
 
-        generated/koi-generated)
+        ${Koi_SOURCE_DIR}/generated/koi-generated)
 
-find_library(ANTLR antlr4-runtime.lib libs)
+find_library(ANTLR antlr4-runtime.lib ${Koi_SOURCE_DIR}/libs)
 target_link_libraries(Koi ${ANTLR})
